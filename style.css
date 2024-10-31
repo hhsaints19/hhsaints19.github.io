@@ -1,0 +1,205 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #2e2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top to allow content growth */
+    min-height: 100vh;
+    padding-top: 80px; /* Allow space for the fixed header */
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Center Content Container */
+main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Navigation Banner */
+.banner {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3b3b3b;
+    padding: 15px 0;
+    border-bottom: 4px solid #ffa500;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.banner a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.banner a:hover {
+    background-color: #ffa500;
+    color: #3b3b3b;
+}
+
+/* Content Box */
+.content {
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    margin: 20px 0; /* Dynamic top and bottom margin to allow room for growth */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Left-align text within the content */
+.content p,
+.content h2,
+.content li {
+    text-align: left;
+    color: #444;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    color: #ffa500;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Hosts Section */
+.hosts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.host {
+    flex: 0 1 200px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.host:hover {
+    transform: translateY(-5px);
+}
+
+.host img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.host h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.image-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Scavenger Hunt Clues */
+.clues p {
+    font-size: 1rem;
+    margin: 15px 0;
+    color: #444;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Adjust navigation for smaller screens */
+    .banner {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Center-align text within the content on mobile */
+    .content p,
+    .content h2,
+    .content li {
+        text-align: center;
+    }
+
+    /* Stack host items on smaller screens */
+    .hosts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .host {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Reduce font sizes for mobile readability */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
